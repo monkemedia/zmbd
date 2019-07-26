@@ -1,7 +1,7 @@
 <template>
   <div class="section">
     <div class="columns is-desktop">
-      <div class="column is-2-desktop is-hidden-mobile is-hidden-tablet">
+      <div class="column is-2-desktop is-hidden-mobile is-hidden-tablet-only">
       </div>
       <div class="column is-10-desktop">
         <h1 class="title">Movies now playing</h1>
@@ -12,7 +12,7 @@
       <div class="column is-10-desktop">
         <div class="columns is-multiline is-desktop">
           <movie-stub v-for="movie in filteredMovies" :key="movie.id" :movie="movie" />
-          <div class="no-movies has-text-centered" v-if="!filteredMovies.length">
+          <div v-if="!filteredMovies.length" class="no-movies has-text-centered">
             <p class="subtitle">(๑◕︵◕๑) Sorry, there are no results.</p>
           </div>
         </div>

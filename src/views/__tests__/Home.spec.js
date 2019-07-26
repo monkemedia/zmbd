@@ -1,7 +1,6 @@
 import { shallowMount, createLocalVue } from '@vue/test-utils'
 import Vuex from 'vuex'
 import Home from '@/views/Home.vue'
-import Sidebar from '@/views/Sidebar'
 import flushPromises from 'flush-promises'
 
 const localVue = createLocalVue()

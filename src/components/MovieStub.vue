@@ -57,7 +57,7 @@ export default {
 
     truncateOverview () {
       const overview = this.movie.overview
-      return overview ? `${overview.substring(0, this.truncateLength)}...` : ''
+      return overview && overview.length >= this.truncateLength ? `${overview.substring(0, this.truncateLength)}...` : overview
     }
   }
 }

@@ -10,7 +10,6 @@ localVue.use(VueRouter)
 const router = new VueRouter()
 
 describe('App.vue', () => {
-  let wrapper
   let store
   let actions
 
@@ -23,7 +22,7 @@ describe('App.vue', () => {
       actions
     })
   
-    wrapper = shallowMount(App, {
+    shallowMount(App, {
       store,
       localVue,
       router

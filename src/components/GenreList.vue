@@ -32,8 +32,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import '~sass-rem';
   @import '@/assets/scss/utilities/variables.scss';
+  @import '~sass-rem';
 
   .genre-list {
     display: flex;
