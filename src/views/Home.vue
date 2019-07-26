@@ -12,6 +12,9 @@
       <div class="column is-10-desktop">
         <div class="columns is-multiline is-desktop">
           <movie-stub v-for="movie in filteredMovies" :key="movie.id" :movie="movie" />
+          <div class="no-movies has-text-centered" v-if="!filteredMovies.length">
+            <p class="subtitle">(๑◕︵◕๑) Sorry, there are no results.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -88,3 +91,13 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  @import 'sass-rem';
+
+  .no-movies {
+    width: 100%;
+    padding-top: rem(40px);
+  }
+</style>
+

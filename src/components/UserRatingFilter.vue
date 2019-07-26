@@ -14,7 +14,7 @@
             Min: {{ userRatingFilter ? userRatingFilter[0] : 'error' }}
           </div>
           <div class="range-values__max">
-            Min: {{ userRatingFilter ? userRatingFilter[1] : 'error' }}
+            Max: {{ userRatingFilter ? userRatingFilter[1] : 'error' }}
           </div>
         </div>
     </div>
