@@ -50,9 +50,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import '@/assets/scss/utilities/variables.scss';
   @import '~bulma-checkradio';
   @import 'sass-rem';
-  @import '@/assets/scss/utilities/variables.scss';
+  @import 'sass-mq';
 
   .menu-label {
     font-weight: 500;
@@ -64,7 +65,11 @@ export default {
     flex-wrap: wrap;
 
     .field {
-      width: 100%;
+      min-width: 135px;
+
+      @include mq($from: $desktop) {
+        width: 100%;
+      }
     }
 
     .label {

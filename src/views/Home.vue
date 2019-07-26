@@ -1,7 +1,7 @@
 <template>
   <div class="section">
     <div class="columns is-desktop">
-      <div class="column is-2-desktop">
+      <div class="column is-2-desktop is-hidden-mobile is-hidden-tablet">
       </div>
       <div class="column is-10-desktop">
         <h1 class="title">Movies now playing</h1>

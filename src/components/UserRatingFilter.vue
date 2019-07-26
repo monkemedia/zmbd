@@ -1,11 +1,12 @@
 <template>
-  <div>
+  <div class="user-ratings-filter">
     <p class="menu-label">
       User Ratings
     </p>
     <div class="menu-list">
       <vue-slider
         v-model="userRatingFilter"
+        :tooltip="'none'"
         :min="min"
         :max="max" />
         <div class="range-values">
@@ -54,11 +55,31 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import '@/assets/scss/utilities/variables.scss';
   @import '~vue-slider-component/theme/default.css';
+  @import 'sass-rem';
+
+  .user-ratings-filter {
+    margin-top: rem(40px);
+  }
+
+  .menu-label {
+    font-weight: 500;
+    color: $grey-light;
+  }
 
   .range-values {
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
+    font-size: rem(13px);
+    text-transform: uppercase;
+    font-weight: 500;
+    color: $grey;
+    margin-top: rem(10px);
+  }
+
+  /deep/ .vue-slider-process {
+    background-color: $primary;
   }
 </style>
 
