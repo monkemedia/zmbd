@@ -1,0 +1,31 @@
+@import '~bulma/sass/utilities/initial-variables';
+
+@font-face {
+  font-family: 'Euclid Flex';
+  src: url('~@/assets/fonts/EuclidFlex-Regular-WebTrial.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Euclid Flex';
+  src: url('~@/assets/fonts/EuclidFlex-Semibold-WebTrial.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Euclid Flex';
+  src: url('~@/assets/fonts/EuclidFlex-Bold-WebTrial.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+// Typography
+$family-primary: 'Euclid Flex', sans-serif;
+
+
+// Colors
+$body-background-color: #fafafa;
+$primary: #DE3133;
+$yellow: #E4B326;
