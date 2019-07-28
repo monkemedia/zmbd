@@ -33,10 +33,33 @@ const fakeMoviesData = {
   ]
 }
 
+const fakeGenreList = {
+  genres: [
+    {
+      id: 28,
+      name: 'Action'
+    },
+    {
+      id: 12,
+      name: 'Adventure'
+    },
+    {
+      id: 16,
+      name: 'Animation'
+    }
+  ]
+}
+
 export default {
   async moviesNowPlaying () {
     return await new Promise(resolve => {
       resolve(fakeMoviesData)
+    })
+  },
+
+  async genreList () {
+    return await new Promise(resolve => {
+      resolve(fakeGenreList)
     })
   }
 }

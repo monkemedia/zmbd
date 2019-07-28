@@ -4,57 +4,62 @@ import ApiService from '@/services/ApiService.js'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
-  state: {
-    genres: [],
-    genreFilter: [],
-    userRatingFilter: [0, 10]
+export const state = {
+  genres: [],
+  genreFilter: [],
+  userRatingFilter: [0, 10]
+}
+
+export const mutations = {
+  SET_GENRES (state, payload) {
+    state.genres = payload
   },
 
-  mutations: {
-    SET_GENRES (state, payload) {
-      state.genres = payload
-    },
-
-    SET_GENRE_FILTER (state, payload) {
-      state.genreFilter = payload
-    },
-
-    SET_USER_RATING_FILTER (state, payload) {
-      state.userRatingFilter = payload
-    }
+  SET_GENRE_FILTER (state, payload) {
+    state.genreFilter = payload
   },
 
-  actions: {
-    async fetchGenres ({ commit }) {
-      let response
+  SET_USER_RATING_FILTER (state, payload) {
+    state.userRatingFilter = payload
+  }
+}
 
-      try {
-        response = await ApiService.genreList()
-        commit('SET_GENRES', response.genres)
+export const actions = {
+  async fetchGenres ({ commit }) {
+    let response
 
-        const idsOnly = response.genres.map(pay => {
-          return pay.id
-        })
-        commit('SET_GENRE_FILTER', idsOnly)
+    try {
+      response = await ApiService.genreList()
+      commit('SET_GENRES', response.genres)
 
-      } catch (err) {
-        console.log(err)
-      }
-    }
-  },
+      const idsOnly = response.genres.map(pay => {
+        return pay.id
+      })
+      commit('SET_GENRE_FILTER', idsOnly)
 
-  getters: {
-    getGenres (state) {
-      return state.genres
-    },
-
-    getGenreFilters (state) {
-      return state.genreFilter
-    },
-
-    getUserRatingFilters (state) {
-      return state.userRatingFilter
+    } catch (err) {
+      console.log(err)
     }
   }
+}
+
+export const getters = {
+  getGenres (state) {
+    return state.genres
+  },
+
+  getGenreFilters (state) {
+    return state.genreFilter
+  },
+
+  getUserRatingFilters (state) {
+    return state.userRatingFilter
+  }
+}
+
+export default new Vuex.Store({
+  state,
+  mutations,
+  actions,
+  getters
 })
